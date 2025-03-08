@@ -17,6 +17,18 @@ func TestCleanInput(t *testing.T) {
 			input:    " one    two -three-    /@/ ",
 			expected: []string{"one", "two", "-three-", "/@/"},
 		},
+		{
+			input:    " ",
+			expected: []string{},
+		},
+		{
+			input:    "hello\tworld\nnew\nline",
+			expected: []string{"hello", "world", "new", "line"},
+		},
+		{
+			input:    "sINGlewoRD",
+			expected: []string{"singleword"},
+		},
 	}
 
 	for _, c := range cases {
