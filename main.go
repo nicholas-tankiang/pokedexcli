@@ -15,7 +15,13 @@ func main() {
 		scanner.Scan()
 		input := scanner.Text()
 		cleaned := cleanInput(input)
-		fmt.Println("Your command was:", cleaned[0])
+
+		if len(cleaned) > 0 {
+			fmt.Println("Your command was:", cleaned[0])
+		} else {
+			fmt.Println("No command entered.")
+		}
+
 	}
 }
 
